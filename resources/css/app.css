@@ -4,9 +4,9 @@
 
 @layer base {
     html {
-        font-family: "Outfit", sans-serif;
+        font-family: "Rubik", sans-serif;
         font-optical-sizing: auto;
-        font-weight: weight;
+        font-weight: 450;
         font-style: normal;
     }
 }
