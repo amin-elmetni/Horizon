@@ -51,10 +51,11 @@ export default {
                 },
                 bg1: {
                     DEFAULT: "#F7F7F8",
+                    // DEFAULT: "#F5F5F5",
                     foreground: "hsl(var(--muted-foreground))",
                 },
                 bg2: {
-                    DEFAULT: "#E3F5F4",
+                    DEFAULT: "#FDF7E2",
                     foreground: "hsl(var(--destructive-foreground))",
                 },
                 popover: {
@@ -66,24 +67,20 @@ export default {
                     foreground: "hsl(var(--card-foreground))",
                 },
             },
-            borderRadius: {
-                lg: "var(--radius)",
-                md: "calc(var(--radius) - 2px)",
-                sm: "calc(var(--radius) - 4px)",
-            },
+
             keyframes: {
-                "accordion-down": {
-                    from: { height: "0" },
-                    to: { height: "var(--radix-accordion-content-height)" },
+                wiggle: {
+                    "0%, 100%": { transform: "rotate(-8deg)" },
+                    "50%": { transform: "rotate(8deg)" },
                 },
-                "accordion-up": {
-                    from: { height: "var(--radix-accordion-content-height)" },
-                    to: { height: "0" },
+                circle: {
+                    "0%": { "stroke-dasharray": "0 100" },
+                    "100%": { "stroke-dasharray": "100 0" },
                 },
             },
             animation: {
-                "accordion-down": "accordion-down 0.2s ease-out",
-                "accordion-up": "accordion-up 0.2s ease-out",
+                wiggle: "wiggle 1s ease-in-out infinite",
+                circle: "border-draw 2s linear forwards",
             },
         },
     },

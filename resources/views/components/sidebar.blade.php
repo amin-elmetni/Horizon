@@ -1,4 +1,4 @@
-<div class="w-[270px] px-6 py-6 bg-bg1 h-screen flex flex-col items-center">
+<div class="w-[270px] px-6 py-4 bg-bg1 h-screen flex flex-col items-center">
     <a href="#" class="flex items-center gap-2 text-2xl font-medium text-primary mb-20 self-start">
         <svg id="logo-15" width="35" height="48" viewBox="0 0 49 48" fill="none"
             xmlns="http://www.w3.org/2000/svg">
@@ -26,12 +26,12 @@
         </x-button>
     </div>
     <div class="flex flex-col self-stretch gap-3 pl-2">
-        <a href="#" class="flex items-center gap-4 py-2 px-6 group transition hover:scale-110">
+        <a href="/overview" class="flex items-center gap-4 py-2 px-6 group transition hover:scale-110">
             <i
                 class="fa-solid fa-chart-pie text-2xl w-9 text-center text-gray2 group-hover:text-primary transition"></i>
             <h2 class="text-gray3 group-hover:text-black transition">Overview</h2>
         </a>
-        <a href="#" class="flex items-center gap-4 py-2 px-6 group transition hover:scale-110">
+        <a href="/classes" class="flex items-center gap-4 py-2 px-6 group transition hover:scale-110">
             <i
                 class="fa-solid fa-chalkboard text-2xl w-9 text-center text-gray2 group-hover:text-primary transition"></i>
             <h2 class="text-gray3 group-hover:text-black transition">Classes</h2>
