@@ -39,7 +39,7 @@ export default {
                     foreground: "hsl(var(--accent-foreground))",
                 },
                 fourthSecondary: {
-                    DEFAULT: "#D34064",
+                    DEFAULT: "#CB204A",
                     foreground: "hsl(var(--accent-foreground))",
                 },
                 gray1: {

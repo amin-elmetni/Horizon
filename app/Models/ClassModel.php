@@ -15,9 +15,8 @@ class ClassModel extends Model
 
     protected $fillable = [
         'className',
-        'duration',
+        'description',
         'price',
-        'daysPerWeek',
         'grade',
         'isDeleted'
     ];

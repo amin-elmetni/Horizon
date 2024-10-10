@@ -10,3 +10,34 @@
         font-style: normal;
     }
 }
+
+@layer utilities {
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+
+    /** customized scrollbar */
+    .scrollbar::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    .scrollbar::-webkit-scrollbar-track {
+        background: #d3d3d3;
+    }
+
+    .scrollbar::-webkit-scrollbar-thumb {
+        /* background: #888; */
+        background: #00c494;
+    }
+
+    .scrollbar::-webkit-scrollbar-thumb:hover {
+        /* background: #555; */
+        background: #00ac82;
+    }
+}

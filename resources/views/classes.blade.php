@@ -11,17 +11,21 @@
             <x-slot name="value">{{ $totalGrades }} grades</x-slot>
             <x-slot name="label">Total grades</x-slot>
         </x-card2>
-        <x-card3>
+        <x-card3 other="create-class-btn">
             <x-slot name="icon"><i class="fa-solid fa-chalkboard"></i></x-slot>
             <x-slot name="value">Create Class</x-slot>
             <x-slot name="label">Add a new class here</x-slot>
         </x-card3>
     </div>
+
+    @error('className')
+        <x-errorItem :message="$message" />
+    @enderror
+
     <div class="flex gap-8">
         <div class="flex flex-col gap-2 ">
             @foreach ($classes as $index => $class)
                 @php
-                    // Calculate the correct index based on current page and items per page
                     $itemIndex = ($classes->currentPage() - 1) * $classes->perPage() + $index;
                 @endphp
                 <x-classes.classItem :index="$itemIndex" :class="$class"></x-classes.classItem>
@@ -33,5 +37,9 @@
         @foreach ($classes as $class)
             <x-classes.classDetailsItem :class="$class"></x-classes.classDetailsItem>
         @endforeach
+        @foreach ($classes as $class)
+            <x-classes.modifyClassForm :class="$class"></x-classes.modifyClassForm>
+        @endforeach
+        <x-classes.createClassForm></x-classes.createClassForm>
     </div>
 </x-layout>

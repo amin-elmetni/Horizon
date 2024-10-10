@@ -3,14 +3,18 @@
     <span class="font-medium capitalize mb-1">{{ $class->className }}</span>
     <span class="text-sm text-gray1 mb-3">{{ $class->description }}</span>
     <span class="text-sm mb-2">Teachers</span>
-    <div class="flex gap-1 mb-4">
-        @foreach ($class->teachers as $teacher)
-            <a href="#" class="group">
-                <img src="/storage/{{ $teacher->avatar }}" alt="no image found"
-                    class="w-10 h-10 rounded-full border-2 border-gray2 group-hover:border-primary group-hover:scale-105  transition">
-            </a>
-        @endforeach
-    </div>
+    @if ($class->teachers->isEmpty())
+        <span class="text-sm text-gray1 mb-3">No teachers submitted to this class</span>
+    @else
+        <div class="grid grid-cols-5 gap-[5px] w-fit mb-4">
+            @foreach ($class->teachers as $teacher)
+                <a href="#" class="group">
+                    <img src="/storage/{{ $teacher->avatar }}" alt="no image found"
+                        class="w-10 h-10 rounded-full border-2 border-gray2 group-hover:border-primary group-hover:scale-105  transition">
+                </a>
+            @endforeach
+        </div>
+    @endif
     <div class="flex flex-col w-[70%] mb-3 ">
         @foreach ($class->sessions as $session)
             <div class="flex items-center justify-between">
@@ -35,11 +39,15 @@
         <span>{{ $class->price }} MAD</span>
     </div>
     <div class="flex gap-3">
-        <x-button width='w-[100%]'>
+        <x-button width='w-[100%]' other="modify-class-btn modify-class-btn-{{ $class->classID }}">
             <span class="font-medium">Modify Class</span>
         </x-button>
-        <x-button bgColor='bg-fourth' hover='hover:bg-fourthSecondary' width='w-11 aspect-square'>
-            <i class="fa-solid fa-trash-can"></i>
-        </x-button>
+        <form action="/deleteClass/{{ $class->classID }}" method="POST">
+            @csrf
+            @method('DELETE')
+            <x-button bgColor='bg-fourth' hover='hover:bg-fourthSecondary' width='w-11 aspect-square'>
+                <i class="fa-solid fa-trash-can group-hover:animate-wiggle"></i>
+            </x-button>
+        </form>
     </div>
 </div>
