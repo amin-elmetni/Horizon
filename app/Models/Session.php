@@ -21,4 +21,9 @@ class Session extends Model
         'endTime',
         'isDeleted'
     ];
+
+    public function class()
+    {
+        return $this->belongsTo(ClassModel::class, 'classID');
+    }
 }

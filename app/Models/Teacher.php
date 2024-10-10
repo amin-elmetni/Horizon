@@ -22,4 +22,9 @@ class Teacher extends Model
         'address',
         'isDeleted'
     ];
+
+    public function class()
+    {
+        return $this->belongsTo(ClassModel::class, 'classID');
+    }
 }

@@ -7,10 +7,10 @@ Route::get('/', function () {
     return view('login');
 });
 
-// * Class Related Routes
+// * Overview related routes
 Route::get('/overview', function () {
     return view('overview');
 });
 
-// * Class Related Routes
+// * Class related routes
 Route::get('/classes', [ClassController::class, "showClassesPage"]);

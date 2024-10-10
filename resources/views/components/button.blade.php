@@ -1,4 +1,6 @@
+@props(['bgColor' => 'bg-primary', 'hover' => 'hover:bg-secondary', 'width' => 'w-fit'])
+
 <button
-    class="bg-primary py-[10px] px-7 w-fit text-white uppercase text-sm tracking-wide flex items-center gap-3 rounded hover:bg-secondary hover:scale-105 transition">
+    class="{{ $bgColor }} {{ $hover }} {{ $width }} py-[10px] px-5 text-white uppercase text-sm tracking-wide flex items-center justify-center gap-3 rounded hover:scale-105 transition">
     {{ $slot }}
 </button>

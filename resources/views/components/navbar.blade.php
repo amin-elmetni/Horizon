@@ -1,4 +1,4 @@
-<div class="flex justify-between w-full">
+<div class="flex justify-between w-full mb-10">
     <div class="bg-bg1 lg:w-96 w-60 flex justify-between items-center rounded">
         <input class="bg-transparent px-5 py-3 w-full focus:outline-0" type="text" placeholder="Search...">
         <i class="fa-solid fa-magnifying-glass mx-4 text-gray2"></i>

@@ -4,6 +4,7 @@ export default {
         "./resources/**/*.blade.php",
         "./resources/**/*.js",
         "./resources/**/*.vue",
+        "./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php",
     ],
     theme: {
         fontFamily: {
@@ -37,6 +38,10 @@ export default {
                     DEFAULT: "#C40030",
                     foreground: "hsl(var(--accent-foreground))",
                 },
+                fourthSecondary: {
+                    DEFAULT: "#D34064",
+                    foreground: "hsl(var(--accent-foreground))",
+                },
                 gray1: {
                     DEFAULT: "#797C77",
                     foreground: "hsl(var(--accent-foreground))",
@@ -58,6 +63,10 @@ export default {
                     DEFAULT: "#FDF7E2",
                     foreground: "hsl(var(--destructive-foreground))",
                 },
+                bg3: {
+                    DEFAULT: "#DFF8F2",
+                    foreground: "hsl(var(--destructive-foreground))",
+                },
                 popover: {
                     DEFAULT: "hsl(var(--popover))",
                     foreground: "hsl(var(--popover-foreground))",
@@ -77,10 +86,15 @@ export default {
                     "0%": { "stroke-dasharray": "0 100" },
                     "100%": { "stroke-dasharray": "100 0" },
                 },
+                marquee: {
+                    "0%": { transform: "translateX(100%)" },
+                    "100%": { transform: "translateX(-100%)" },
+                },
             },
             animation: {
                 wiggle: "wiggle 1s ease-in-out infinite",
                 circle: "border-draw 2s linear forwards",
+                marquee: "marquee 10s linear infinite",
             },
         },
     },

@@ -20,7 +20,7 @@
     <body>
         <div class="flex">
             <x-sidebar></x-sidebar>
-            <div class="py-8 px-16 flex flex-col flex-grow">
+            <div class="py-8 px-16 flex flex-col flex-grow ml-64">
                 <x-navbar />
                 {{ $slot }}
             </div>
