@@ -3,18 +3,18 @@
     <span class="font-medium capitalize mb-1">{{ $class->className }}</span>
     <span class="text-sm text-gray1 mb-3">{{ $class->description }}</span>
     <span class="text-sm mb-2">Teachers</span>
-    @if ($class->teachers->isEmpty())
+    {{-- @if ($class->teachersClass->isEmpty())
         <span class="text-sm text-gray1 mb-3">No teachers submitted to this class</span>
     @else
         <div class="grid grid-cols-5 gap-[5px] w-fit mb-4">
-            @foreach ($class->teachers as $teacher)
+            @foreach ($class->teachersClass as $teacherClass)
                 <a href="#" class="group">
-                    <img src="/storage/{{ $teacher->avatar }}" alt="no image found"
+                    <img src="/storage/{{ $teacherClass->teacher->avatar }}" alt="no image found"
                         class="w-10 h-10 rounded-full border-2 border-gray2 group-hover:border-primary group-hover:scale-105  transition">
                 </a>
             @endforeach
         </div>
-    @endif
+    @endif --}}
     <div class="flex flex-col w-[70%] mb-3 ">
         @foreach ($class->sessions as $session)
             <div class="flex items-center justify-between">
@@ -32,7 +32,7 @@
         <i class="fa-solid fa-graduation-cap"></i>
         <span class="capitalize mr-4 text-gray1">{{ $class->grade }}</span>
         <i class="fa-solid fa-user-graduate"></i>
-        <span class="text-gray1">{{ $class->students->count() }} Students</span>
+        {{-- <span class="text-gray1">{{ $class->students->count() }} Students</span> --}}
     </div>
     <div class="flex gap-2 items-center text-xl text-third font-medium mb-6">
         <i class="fa-solid fa-coins"></i>

@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="flex flex-col pl-8 pr-2 w-[160px] overflow-hidden">
-            <span class="font-medium text-sm truncate">{{ $class->teachers->count() }} Teachers</span>
+            <span class="font-medium text-sm truncate">{{ $class->teachersClass->count() }} Teachers</span>
             <div class="flex gap-2 text-gray1 group-hover:text-black transition text-xs">
                 <i class="fa-solid fa-calendar-days"></i>
                 <span class="truncate">

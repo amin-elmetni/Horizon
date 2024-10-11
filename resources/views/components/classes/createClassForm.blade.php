@@ -1,4 +1,4 @@
-<form class="flex flex-col gap-3 h-full w-[300px] border-l border-primary px-6 py-4 create-class-form"
+<form class="flex flex-col gap-3 h-full w-[300px] border-l border-primary px-6 py-4 create-class-form hidden"
     action="/createClass" method="POST">
     @csrf
     <h2 class="font-medium capitalize text-lg">Create class form</h2>

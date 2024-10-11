@@ -13,18 +13,10 @@ class Teacher extends Model
     protected $primaryKey = 'teacherID';
 
     protected $fillable = [
-        'classID',
         'name',
         'email',
         'phoneNumber',
         'avatar',
-        'hoursWorked',
-        'address',
         'isDeleted'
     ];
-
-    public function class()
-    {
-        return $this->belongsTo(ClassModel::class, 'classID');
-    }
 }

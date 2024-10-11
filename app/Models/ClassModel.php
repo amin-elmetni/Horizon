@@ -21,26 +21,15 @@ class ClassModel extends Model
         'isDeleted'
     ];
 
-    public function payments()
+    public function studentsClass()
     {
-        return $this->hasMany(Payment::class, 'classID');
+        return $this->hasMany(StudentClass::class, 'classID');
     }
 
-    public function salaries()
+    public function teachersClass()
     {
-        return $this->hasMany(Salary::class, 'classID');
+        return $this->hasMany(TeacherClass::class, 'classID');
     }
-
-    public function teachers()
-    {
-        return $this->hasMany(Teacher::class, 'classID');
-    }
-
-    public function students()
-    {
-        return $this->hasMany(Student::class, 'classID');
-    }
-
     public function sessions()
     {
         return $this->hasMany(Session::class, 'classID');

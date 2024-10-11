@@ -13,18 +13,10 @@ class Student extends Model
     protected $primaryKey = 'studentID';
 
     protected $fillable = [
-        'classID',
-        'teacherID',
         'name',
         'email',
         'phoneNumber',
-        'isDiscounted',
         'avatar',
         'isDeleted'
     ];
-
-    public function class()
-    {
-        return $this->belongsTo(ClassModel::class, 'classID');
-    }
 }
