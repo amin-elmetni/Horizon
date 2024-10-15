@@ -21,17 +21,22 @@ class ClassModel extends Model
         'isDeleted'
     ];
 
-    public function studentsClass()
-    {
-        return $this->hasMany(StudentClass::class, 'classID');
-    }
 
+    // * return a collection of teacherClass for teachers of the same class
     public function teachersClass()
     {
         return $this->hasMany(TeacherClass::class, 'classID');
     }
+
+    // * return a collection of studentClass for students of the same class
+    public function studentsClass()
+    {
+        return $this->hasManyThrough(StudentClass::class, TeacherClass::class, 'classID', 'teacherClassID', 'classID', 'id');
+    }
+
+    // * return a collection of sessions for teacherClasses of the same class
     public function sessions()
     {
-        return $this->hasMany(Session::class, 'classID');
+        return $this->hasManyThrough(Session::class, TeacherClass::class, 'classID', 'teacherClassID', 'classID', 'id');
     }
 }

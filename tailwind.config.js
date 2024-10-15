@@ -6,6 +6,21 @@ export default {
         "./resources/**/*.vue",
         "./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php",
     ],
+    safelist: [
+        "has-[input:focus]:text-primary",
+        "has-[input:focus]:border-primary",
+        "has-[input:not(:placeholder-shown)]:text-primary",
+        "has-[input:not(:placeholder-shown)]:border-primary",
+        "has-[input:focus]:text-third",
+        "has-[input:focus]:border-third",
+        "has-[input:not(:placeholder-shown)]:text-third",
+        "has-[input:not(:placeholder-shown)]:border-third",
+        "text-primary",
+        "text-third",
+        "text-gray1",
+        "text-gray2",
+        "text-gray3",
+    ],
     theme: {
         fontFamily: {
             sans: ["Mulish", "sans-serif"],
@@ -34,12 +49,20 @@ export default {
                     DEFAULT: "#FFCB1F",
                     foreground: "hsl(var(--secondary-foreground))",
                 },
-                fourth: {
+                danger: {
                     DEFAULT: "#C40030",
                     foreground: "hsl(var(--accent-foreground))",
                 },
-                fourthSecondary: {
+                dangerSecondary: {
                     DEFAULT: "#CB204A",
+                    foreground: "hsl(var(--accent-foreground))",
+                },
+                repair: {
+                    DEFAULT: "#006DDD",
+                    foreground: "hsl(var(--accent-foreground))",
+                },
+                repairSecondary: {
+                    DEFAULT: "#208DFD",
                     foreground: "hsl(var(--accent-foreground))",
                 },
                 gray1: {
@@ -64,7 +87,7 @@ export default {
                     foreground: "hsl(var(--destructive-foreground))",
                 },
                 bg3: {
-                    DEFAULT: "#DFF8F2",
+                    DEFAULT: "#F7F7F7",
                     foreground: "hsl(var(--destructive-foreground))",
                 },
                 popover: {

@@ -19,41 +19,22 @@
     </a>
 
 
-    <div class="mb-9">
-        <x-button width='w-52'>
+    <a href="/classes" class="mb-9">
+        <x-UIcomponents.button width='w-52'>
             <h1 class="font-medium">Create class</h1>
             <i class="fa-solid fa-plus text-lg"></i>
-        </x-button>
-    </div>
+        </x-UIcomponents.button>
+    </a>
     <div class="flex flex-col self-stretch gap-3 pl-2">
-        <x-sidebarSection>
-            <x-slot name="section">overview</x-slot>
-            <x-slot name="icon">fa-solid fa-chart-pie</x-slot>
-        </x-sidebarSection>
+        {{-- <x-sidebarSection section="overview" icon="fa-solid fa-chart-pie" /> --}}
 
-        <x-sidebarSection>
-            <x-slot name="section">classes</x-slot>
-            <x-slot name="icon">fa-solid fa-chalkboard</x-slot>
-        </x-sidebarSection>
+        <x-sidebarSection section="classes" icon="fa-solid fa-chalkboard" />
 
-        <x-sidebarSection>
-            <x-slot name="section">students</x-slot>
-            <x-slot name="icon">fa-solid fa-user-graduate</x-slot>
-        </x-sidebarSection>
+        <x-sidebarSection section="teachers" icon="fa-solid fa-chalkboard-user" />
 
-        <x-sidebarSection>
-            <x-slot name="section">teachers</x-slot>
-            <x-slot name="icon">fa-solid fa-chalkboard-user</x-slot>
-        </x-sidebarSection>
+        <x-sidebarSection section="students" icon="fa-solid fa-user-graduate" />
 
-        <x-sidebarSection>
-            <x-slot name="section">incomes</x-slot>
-            <x-slot name="icon">fa-solid fa-coins</x-slot>
-        </x-sidebarSection>
+        {{-- <x-sidebarSection section="timetable" icon="fa-solid fa-calendar" /> --}}
 
-        <x-sidebarSection>
-            <x-slot name="section">timetable</x-slot>
-            <x-slot name="icon">fa-solid fa-calendar</x-slot>
-        </x-sidebarSection>
     </div>
 </div>

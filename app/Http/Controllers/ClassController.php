@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ClassModel;
+use App\Models\Teacher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -48,11 +49,13 @@ class ClassController extends Controller
     public function showClassesPage()
     {
         $classes = ClassModel::orderBy('updated_at', 'desc')->paginate(5);
-        $totalClasses = $classes->count();
+        $teachers = Teacher::all();
+        $totalClasses = ClassModel::all()->count();
         $totalGrades = ClassModel::distinct()->count('grade');
 
         return view('classes', [
             'classes' => $classes,
+            'teachers' => $teachers,
             'totalClasses' => $totalClasses,
             'totalGrades' => $totalGrades,
         ]);

@@ -3,7 +3,7 @@
         {{ $icon }}
     </div>
     <div class="flex flex-col items-start">
-        <span class="text-lg font-[450] {{ $valueColor }}">{{ $value }}</span>
+        <span class="text-lg font-[450] capitalize {{ $valueColor }}">{{ $value }}</span>
         <span class="text-xs {{ $labelColor }}">{{ $label }}</span>
     </div>
 </div>

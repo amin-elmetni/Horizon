@@ -16,7 +16,18 @@ class Teacher extends Model
         'name',
         'email',
         'phoneNumber',
+        'gender',
         'avatar',
         'isDeleted'
     ];
+
+    public function teacherClasses()
+    {
+        return $this->hasMany(TeacherClass::class, 'teacherID');
+    }
+
+    public function students()
+    {
+        return $this->hasManyThrough(Student::class, StudentClass::class, 'teacherClassID', 'studentID', 'teacherID', 'studentID');
+    }
 }

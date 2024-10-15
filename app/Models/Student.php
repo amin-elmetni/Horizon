@@ -19,4 +19,9 @@ class Student extends Model
         'avatar',
         'isDeleted'
     ];
+
+    public function studentClasses()
+    {
+        return $this->hasMany(TeacherClass::class, 'studentID');
+    }
 }

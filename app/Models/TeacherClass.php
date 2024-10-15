@@ -14,9 +14,8 @@ class TeacherClass extends Model
     protected $fillable = [
         'teacherID',
         'classID',
-        'paymentType',
         'amount',
-        'salaryDate',
+        'enrolmentDate',
         'isDeleted'
     ];
 
@@ -28,5 +27,22 @@ class TeacherClass extends Model
     public function class()
     {
         return $this->belongsTo(ClassModel::class, 'classID');
+    }
+
+    public function sessions()
+    {
+        return $this->hasMany(Session::class, 'teacherClassID');
+    }
+
+    // * return a collection of studentClass for students of the same teacherClass
+    public function studentsClass()
+    {
+        return $this->hasMany(StudentClass::class, 'teacherClassID');
+    }
+
+    // * return a collection of students of the same teacherClass
+    public function students()
+    {
+        return $this->hasManyThrough(Student::class, StudentClass::class, 'teacherClassID', 'studentID', 'id', 'studentID');
     }
 }

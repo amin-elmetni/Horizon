@@ -12,8 +12,7 @@ class StudentClass extends Model
     protected $table = 'student_class';
     protected $fillable = [
         'studentID',
-        'classID',
-        'teacherID',
+        'teacherClassID',
         'discount',
         'amount',
         'paymentDate',
@@ -25,8 +24,8 @@ class StudentClass extends Model
         return $this->belongsTo(Student::class, 'studentID');
     }
 
-    public function class()
+    public function teacherClass()
     {
-        return $this->belongsTo(ClassModel::class, 'classID');
+        return $this->belongsTo(TeacherClass::class, 'teacherClassID');
     }
 }

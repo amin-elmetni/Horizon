@@ -13,8 +13,7 @@ class Session extends Model
     protected $primaryKey = 'sessionID';
 
     protected $fillable = [
-        'classID',
-        'teacherID',
+        'teacherClassID',
         'classroom',
         'day',
         'startTime',
@@ -22,8 +21,8 @@ class Session extends Model
         'isDeleted'
     ];
 
-    public function class()
+    public function teacherClass()
     {
-        return $this->belongsTo(ClassModel::class, 'classID');
+        return $this->belongsTo(TeacherClass::class, 'teacherClassID');
     }
 }

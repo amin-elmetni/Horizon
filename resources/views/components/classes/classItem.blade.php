@@ -1,3 +1,15 @@
+@php
+    // Initialize an empty collection to keep track of unique days
+    $allDays = $class->sessions->pluck('day')->unique();
+
+    // Convert the days to their first 3 letters (Mon, Tue, etc.)
+    $formattedDays = $allDays->map(function ($day) {
+        return substr($day, 0, 3);
+    });
+@endphp
+
+
+
 <div class="flex group class-item class-item-{{ $class->classID }}">
     <div
         class="target-1 flex border-l-2 border-t-2 border-b-2 border-gray-100 h-[60px] w-[550px] px-6 py-[10px] rounded-l-md  divide-x items-center capitalize group-hover:bg-bg1 group-hover:text-black cursor-pointer transition">
@@ -9,17 +21,13 @@
                 <span class="text-xs text-gray1 group-hover:text-black transition truncate">{{ $class->grade }}</span>
             </div>
         </div>
-        <div class="flex flex-col pl-8 pr-2 w-[160px] overflow-hidden">
+        <div class="flex flex-col pl-8 pr-4 w-[160px] overflow-hidden">
             <span class="font-medium text-sm truncate">{{ $class->teachersClass->count() }} Teachers</span>
             <div class="flex gap-2 text-gray1 group-hover:text-black transition text-xs">
                 <i class="fa-solid fa-calendar-days"></i>
                 <span class="truncate">
-                    {{ implode(
-                        ' - ',
-                        $class->sessions->pluck('day')->map(function ($day) {
-                                return substr($day, 0, 3);
-                            })->toArray(),
-                    ) }}
+                    {{-- * INFO: Display the days with '-' between them --}}
+                    {{ implode(' - ', $formattedDays->toArray()) }}
                 </span>
             </div>
         </div>
