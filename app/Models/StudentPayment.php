@@ -12,14 +12,15 @@ class StudentPayment extends Model
     protected $table = 'student_payment';
 
     protected $fillable = [
-        'studentID',
+        'studentClassID',
         'paymentDate',
         'amount',
+        'isPayed',
         'isDeleted'
     ];
 
-    public function student()
+    public function studentClass()
     {
-        return $this->belongsTo(Student::class, 'studentID');
+        return $this->belongsTo(StudentClass::class, 'studentClassID');
     }
 }

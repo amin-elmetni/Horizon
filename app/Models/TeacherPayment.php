@@ -9,17 +9,18 @@ class TeacherPayment extends Model
 {
     use HasFactory;
 
-    protected $table = 'student_payment';
+    protected $table = 'teacher_payment';
 
     protected $fillable = [
-        'teacherID',
+        'teacherClassID',
         'paymentDate',
         'amount',
+        'isPayed',
         'isDeleted'
     ];
 
-    public function teacher()
+    public function teacherClass()
     {
-        return $this->belongsTo(Teacher::class, 'teacherID');
+        return $this->belongsTo(TeacherClass::class, 'teacherClassID');
     }
 }
