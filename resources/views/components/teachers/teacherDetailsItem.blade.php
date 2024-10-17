@@ -1,6 +1,6 @@
 <div
     class="flex flex-col flex-grow  gap-4 border-l pl-8 teacher-details teacher-{{ $teacher->teacherID }}-details hidden">
-    <img src="/storage/default_avatar.jpg" alt="no image found" class="w-14 h-14 rounded-full self-center">
+    <img src="/storage/{{ $teacher->avatar }}" alt="no image found" class="w-14 h-14 rounded-full self-center">
     <div class="flex flex-col gap-1">
         <span class="self-center font-medium">{{ $teacher->name }}</span>
         <span class="self-center text-sm">{{ $teacher->email }}</span>
@@ -22,18 +22,18 @@
             <i class="fa-solid fa-graduation-cap"></i>
         </div>
         <div class="flex flex-col">
-            <span>{{ $teacher->students->count() }} students</span>
+            <span>{{ $teacher->studentsClasses->count() }} students</span>
             <span class="text-sm text-gray2 capitalize">Total students</span>
         </div>
     </div>
 
-    <div class="flex gap-6 mb-3">
-        <div class="text-xl text-third flex">
+    <div class="flex gap-6 mb-3 text-third">
+        <div class="text-xl flex">
             <i class="fa-solid fa-coins"></i>
         </div>
         <div class="flex flex-col">
-            <span class="font-medium text-third">{{ $teacher->teacherClasses->sum('amount') }} MAD</span>
-            <span class="text-sm text-gray2 capitalize">Total classes profits</span>
+            <span class="font-medium ">{{ $teacher->teacherClasses->sum('amount') }} MAD</span>
+            <span class="text-sm text-gray2 capitalize">Total classes dues</span>
         </div>
     </div>
 

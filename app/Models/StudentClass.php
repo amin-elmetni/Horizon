@@ -28,4 +28,14 @@ class StudentClass extends Model
     {
         return $this->belongsTo(TeacherClass::class, 'teacherClassID');
     }
+
+    public function class()
+    {
+        return $this->hasOneThrough(ClassModel::class, TeacherClass::class, 'teacherClassID', 'classID', 'teacherClassID', 'classID');
+    }
+
+    public function sessions()
+    {
+        return $this->hasManyThrough(Session::class, TeacherClass::class, 'teacherClassID', 'teacherClassID', 'teacherClassID', 'teacherClassID');
+    }
 }

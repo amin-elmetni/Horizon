@@ -16,8 +16,8 @@
         </x-slot>
     </x-UIcomponents.dropList>
 
-    <x-UIcomponents.input name="amount" placeholder="Teacher's portion" other="required max={{ $class->price }} min=0"
-        borderColor="third" icon="fa-solid fa-coins" type="number" />
+    <x-UIcomponents.input name="amount" placeholder="Teacher's portion" other="required min=0" borderColor="danger"
+        icon="fa-solid fa-user-tie" type="number" />
 
     <x-UIcomponents.button other="w-full mt-4">Add
         teacher</x-UIcomponents.button>

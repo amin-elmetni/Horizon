@@ -53,7 +53,7 @@ class ClassController extends Controller
         $totalClasses = ClassModel::all()->count();
         $totalGrades = ClassModel::distinct()->count('grade');
 
-        return view('classes', [
+        return view('classViews.classes', [
             'classes' => $classes,
             'teachers' => $teachers,
             'totalClasses' => $totalClasses,

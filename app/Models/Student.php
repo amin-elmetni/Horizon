@@ -16,12 +16,13 @@ class Student extends Model
         'name',
         'email',
         'phoneNumber',
+        'gender',
         'avatar',
         'isDeleted'
     ];
 
     public function studentClasses()
     {
-        return $this->hasMany(TeacherClass::class, 'studentID');
+        return $this->hasMany(StudentClass::class, 'studentID');
     }
 }

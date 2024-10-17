@@ -21,13 +21,19 @@ class Teacher extends Model
         'isDeleted'
     ];
 
+    // * return a collection of classes for a teacher 
+    public function classes()
+    {
+        return $this->hasManyThrough(ClassModel::class, TeacherClass::class, 'teacherID', 'classID', 'teacherID', 'classID');
+    }
+
     public function teacherClasses()
     {
         return $this->hasMany(TeacherClass::class, 'teacherID');
     }
 
-    public function students()
+    public function studentsClasses()
     {
-        return $this->hasManyThrough(Student::class, StudentClass::class, 'teacherClassID', 'studentID', 'teacherID', 'studentID');
+        return $this->hasManyThrough(StudentClass::class, TeacherClass::class, 'teacherID', 'teacherClassID', 'teacherID', 'id');
     }
 }

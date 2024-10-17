@@ -21,6 +21,10 @@ class ClassModel extends Model
         'isDeleted'
     ];
 
+    public function teachers()
+    {
+        return $this->hasManyThrough(Teacher::class, TeacherClass::class, 'classID', 'teacherID', 'classID', 'id');
+    }
 
     // * return a collection of teacherClass for teachers of the same class
     public function teachersClass()

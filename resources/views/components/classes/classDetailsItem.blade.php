@@ -1,5 +1,4 @@
-<div
-    class="flex flex-col h-full w-[300px] border-l  px-6 py-4 class-details class-{{ $class->classID }}-details hidden">
+<div class="flex flex-col h-full w-[300px] border-l  px-6 py-4 class-details class-{{ $class->classID }}-details hidden">
     <span class="font-medium capitalize mb-1">{{ $class->className }}</span>
 
     <span class="text-sm text-gray1 mb-3">{{ $class->description }}</span>
@@ -12,7 +11,8 @@
         <div class="grid grid-cols-5 gap-[10px] w-fit mb-5">
             @foreach ($class->teachersClass as $teacherClass)
                 <div class="relative">
-                    <a href="#" title="{{ $teacherClass->teacher->name }}" class="group">
+                    <a href="/teacherProfile/{{ $teacherClass->teacher->name }}/personalInfos"
+                        title="{{ $teacherClass->teacher->name }}" class="group">
                         <img src="/storage/{{ $teacherClass->teacher->avatar }}" alt="no image found"
                             class="w-10 h-10 rounded-full border-2 border-gray2 group-hover:border-primary group-hover:scale-105  transition">
                     </a>
@@ -30,7 +30,7 @@
         </div>
     @endif
 
-    @if ($class->teachersClass->isEmpty() && $class->teachersClass->isNotEmpty())
+    @if ($class->sessions->isEmpty() && $class->teachersClass->isNotEmpty())
         <span class="text-sm text-danger mb-3">No sessions created for this class !</span>
     @else
         <div class="flex flex-col gap-1 mb-3 ">
